@@ -30,6 +30,13 @@ app.post("/register" , async(req,res) => {
     res.send("user registered successfully");
 })
 
+//index page route
+app.get("/index", (req, res) => {
+    res.json({
+        message: "Welcome to YuvaGuard"
+    });
+});
+
 //login route
 app.post("/login" , async(req,res) => {
     let {email , password} = req.body;
