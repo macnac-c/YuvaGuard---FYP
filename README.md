@@ -14,3 +14,4 @@ An Explainable AI Platform for Early Detection of Online Risks in Adolescents.
 - ✅ User Model
 - ✅ User Registration API
 - ✅ User Login API
+- ✅ Index/Landing page API
