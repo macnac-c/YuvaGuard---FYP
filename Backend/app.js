@@ -30,6 +30,27 @@ app.post("/register" , async(req,res) => {
     res.send("user registered successfully");
 })
 
+//login route
+app.post("/login" , async(req,res) => {
+    let {email , password} = req.body;
+
+    let loginUser = await User.findOne({ email }); 
+
+    if(!loginUser){
+        res.send("login unsuccessful");
+    }
+
+    else{
+        if(loginUser.password == password){
+            res.send("login successful");
+        }
+
+        else{
+            res.send("login unsuccessful");
+        }
+    }
+})
+
 app.listen(8080 , () => {
     console.log("server is listening to port 8080");
 })
