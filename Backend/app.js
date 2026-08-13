@@ -7,6 +7,10 @@ const MONGO_URL = "mongodb://127.0.0.1:27017/yuvaguard";
 
 app.use(express.json());
 
+const cors = require("cors");
+
+app.use(cors());
+
 main().then(() => {
     console.log("connected to DB");
 }).catch((err) => {
@@ -56,8 +60,8 @@ app.post("/login" , async(req,res) => {
             res.send("login unsuccessful");
         }
     }
-})
+});
 
 app.listen(8080 , () => {
     console.log("server is listening to port 8080");
-})
+});
